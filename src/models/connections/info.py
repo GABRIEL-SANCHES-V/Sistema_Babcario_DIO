@@ -1,0 +1,1 @@
+"""Manuziar a conecção com o banco de dados."""

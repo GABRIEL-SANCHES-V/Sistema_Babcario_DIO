@@ -1,0 +1,13 @@
+Projeto de sistema bancario para bootcamp da vivo no DIO:
+
+Parte 1:
+
+    Funções:
+     - Sacar;
+     - Depositar;
+     - Extrato.
+
+    Regras de Négocio:
+     - Maximo de 3 saques por dia, com limite de R$ 500,00 cada saque.
+     - O extrato deve mostrar todos os saques e depositos, com o saldo no final.
+     - Caso não tenha saldo o suficiente para realizar o saque deve aparecer uma mensagem informando a situação.
