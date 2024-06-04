@@ -11,3 +11,12 @@ Parte 1:
      - Maximo de 3 saques por dia, com limite de R$ 500,00 cada saque.
      - O extrato deve mostrar todos os saques e depositos, com o saldo no final.
      - Caso não tenha saldo o suficiente para realizar o saque deve aparecer uma mensagem informando a situação.
+
+Parte 2:
+
+    Funções:
+     - Criar Usúario;
+     - Criar Conta Corrente
+
+    Regras de Négocio:
+     - Cada conta corrente só pode ter um usúario vinculado.
