@@ -6,9 +6,12 @@ def start() -> None:
         command = constructor.home_menu()
 
         if command == '1':
+            constructor.user_register_constructor()
+
+        elif command == '3':
             constructor.account_register_constructor()
 
-        elif command == '2':
+        elif command == '4':
             account = constructor.account_find_constructor()
 
             if account is not None:
