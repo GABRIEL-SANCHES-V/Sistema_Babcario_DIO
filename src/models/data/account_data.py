@@ -22,6 +22,8 @@ class __AccountData:
             if account_data.number_account == account.number_account:
                 account_data = account
                 break
+
+#Banco de Dados improvisado até ser implementado um banco de dados real
     
 account_1 = models.classes.Account(person_1)
 account_1.number_account = 1
