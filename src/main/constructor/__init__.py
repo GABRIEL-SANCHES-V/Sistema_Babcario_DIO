@@ -6,3 +6,4 @@ from src.main.constructor.deposit_constructor import *
 from src.main.constructor.withdraw_constructor import *
 from src.main.constructor.extract_constructor import *
 from src.main.constructor.user_register_constructor import *
+from src.main.constructor.user_finder_constructor import *

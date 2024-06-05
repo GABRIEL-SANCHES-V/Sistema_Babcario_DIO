@@ -4,3 +4,4 @@ from src.controllers.deposit_controller import DepositController
 from src.controllers.withdraw_controller import WithdrawController
 from src.controllers.extract_controller import ExtractController
 from src.controllers.user_register_controller import UserRegisterController
+from src.controllers.user_finder_controller import UserFinderController

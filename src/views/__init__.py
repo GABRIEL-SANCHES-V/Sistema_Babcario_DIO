@@ -6,3 +6,4 @@ from src.views.deposit_view import DepositView
 from src.views.withdraw_view import WithdrawView
 from src.views.extract_view import ExtractView
 from src.views.user_register_view import UserRegisterView
+from src.views.user_finder_view import UserFinderView

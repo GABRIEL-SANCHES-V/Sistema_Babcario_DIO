@@ -8,6 +8,9 @@ def start() -> None:
         if command == '1':
             constructor.user_register_constructor()
 
+        elif command == '2':
+            constructor.user_finder_constructor()
+
         elif command == '3':
             constructor.account_register_constructor()
 
