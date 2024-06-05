@@ -1,6 +1,9 @@
 from typing import Dict
 from src import models
 
+LIMIT_WITHDRAWS = 3
+MAX_WITHDRAW = 500
+
 class WithdrawController:
 
     def withdraw(self, account: models.classes.Account, withdraw) -> dict:
@@ -17,7 +20,7 @@ class WithdrawController:
         try: float(withdraw)
         except: raise Exception('Campo valor inválido!')
             
-        if account.number_withdraws >= 3:
+        if account.number_withdraws >= LIMIT_WITHDRAWS:
             raise Exception('Limite de saques atingido!')
         
         if float(withdraw) <= 0:
@@ -26,7 +29,7 @@ class WithdrawController:
         if float(withdraw) > account.balance:
             raise Exception('Saldo insuficiente!')
         
-        if float(withdraw) > 500:
+        if float(withdraw) > MAX_WITHDRAW:
             raise Exception('Valor máximo de saque é R$ 500,00!')
         
     def __withdraw(self, account: models.classes.Account, withdraw):

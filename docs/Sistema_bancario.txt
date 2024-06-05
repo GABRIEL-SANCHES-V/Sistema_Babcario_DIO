@@ -20,3 +20,4 @@ Parte 2:
 
     Regras de Négocio:
      - Cada conta corrente só pode ter um usúario vinculado.
+     - Não pode cadastrar dois usúarios com o mesmo cpf

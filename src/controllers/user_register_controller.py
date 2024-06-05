@@ -1,5 +1,6 @@
 from typing import Dict
 from src import models
+from datetime import datetime
 
 class UserRegisterController:
     def user_register(self, new_user_information: Dict) -> Dict:
@@ -27,11 +28,17 @@ class UserRegisterController:
         
     def __validate_birth_date(self, birth_date: str) -> None:
         if len(birth_date) != 10:
-            raise Exception('Data de Nascimento Inválida!')
+            raise Exception('Data de Nascimento Inválida! (dd/mm/aaaa)')
+        
+        if not birth_date[2] == '/' and birth_date[5] == '/':
+            raise Exception('Data de Nascimento Inválida! (dd/mm/aaaa)')
 
     def __validate_cpf(self, cpf: str) -> None:
         if len(cpf) != 11:
             raise Exception('CPF Inválido!')
+        
+        if not models.data.person_data.validate_cpf(cpf):
+            raise Exception('CPF já cadastrado!')
         
     def __saving_user(self, new_user_information: Dict) -> None:
         name = new_user_information['name']

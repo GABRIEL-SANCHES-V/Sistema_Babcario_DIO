@@ -21,6 +21,5 @@ class __AccountData:
                 break
     
 
-# Dados de Contas
 
 account_data = __AccountData()

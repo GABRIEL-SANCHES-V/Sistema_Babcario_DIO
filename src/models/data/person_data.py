@@ -13,6 +13,12 @@ class __PersonData:
                 return person
         return None
     
+    def validate_cpf(self, cpf: str) -> bool:
+        for person in self.person:
+            if person.cpf == cpf:
+                return False
+        return True
+    
 
 # Dados de Pessoas - Este é um exemplo de dados que poderiam ser carregados de um banco de dados seguindo o modelo sigletom
 

@@ -4,6 +4,7 @@ from typing import Dict
 class Account:
     def __init__(self, person: Person) -> None:
         self.person = person
+        self.agency = '0001'
         self.number_account = 0
         self.balance = 0.0
         self.number_withdraws = 0

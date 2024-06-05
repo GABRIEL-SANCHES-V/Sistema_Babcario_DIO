@@ -8,7 +8,7 @@ class OptionsMenu():
         1 - Cadastrar Usuário
         2 - Encontrar Usuário
         3 - Cadastrar Conta Corrente
-        4 - Entrar na Conta
+        4 - Entrar na Conta Corrente
         5 - Sair'''
 
         print(message)

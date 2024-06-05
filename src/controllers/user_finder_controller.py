@@ -15,9 +15,6 @@ class UserFinderController:
         if not len(cpf) == 11:
             raise Exception('CPF inválido, número de digite inferior a 11')
         
-        if not isinstance(cpf, str):
-            raise Exception('CPF inválido, não é uma string')
-        
         if not cpf.isdigit():
             raise Exception('CPF inválido, contém letras')
         
