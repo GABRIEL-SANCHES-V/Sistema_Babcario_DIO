@@ -3,8 +3,9 @@ from src import models
 from datetime import datetime
 
 class AccountRegisterController:
-    def register(self, new_account_informartions: str) -> Dict:
 
+    #Registras a Conta
+    def register(self, new_account_informartions: str) -> Dict:
         try:
             self.__validate_cpf(new_account_informartions)
             user = self.__find_user(new_account_informartions)
@@ -16,8 +17,16 @@ class AccountRegisterController:
         
         except Exception as error:
             return {'success': False, 'error': str(error)}
-         
 
+    #Associando a senha a conta
+    def password(self, account: models.classes.Account, password: str) -> Dict:
+        try:
+            account.password = password
+            models.data.account_data.update_account(account)
+            return {'success': True, 'message': 'Senha criada com sucesso!'}
+        except Exception as error:
+            return {'success': False, 'error': str(error)}
+         
     def __validate_cpf(self, new_account_informartions: str) -> None:
         if not len(new_account_informartions) == 11:
             raise Exception('CPF inválido, número de digite inferior a 11')
@@ -34,7 +43,7 @@ class AccountRegisterController:
         return user
              
     def __number_account_generator(self) -> int:
-        return len(models.data.account_data.account) + 1
+        return len(models.data.account_data.accounts) + 1
     
     def __create_account(self, user: models.classes.Person) -> models.classes.Account:
         current_account = models.classes.Account(user)

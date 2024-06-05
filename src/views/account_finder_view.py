@@ -6,17 +6,13 @@ class AccountFinderView:
 
         os.system('clear || cls')
 
-        print('Login na Conta:')
-        name = input('Nome: ')
+        print('Login na Conta:'.center(70, '-') + '\n')
         account_number = input('Numero da Conta: ')
+        password = input('Senha: ')
 
         account = {
-            'name': name,
-            'age': None,
             'account_number': account_number,
-            'balance': None,
-            'number_withdraws': None,
-            'extract': None,
+            'password': password
         }
 
         return account
@@ -24,7 +20,11 @@ class AccountFinderView:
     def find_account_success(self, message: Dict) -> None:
         os.system('clear || cls')
 
-        success_message = 'Login realizado com sucesso!'
+        success_message = f'''{message["message"]}
+        
+        Conta: {message["account"].number_account}
+        Saldo: R$ {message["account"].balance:.2f}
+        '''
 
         print(success_message)
 

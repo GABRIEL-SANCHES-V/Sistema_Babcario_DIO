@@ -44,9 +44,13 @@ class UserRegisterController:
         name = new_user_information['name']
         birth_date = new_user_information['birth_date']
         cpf = new_user_information['cpf']
-        address = new_user_information['address']
+        public_place = new_user_information['address']['public_place']
+        neighborhood = new_user_information['address']['neighborhood']
+        city_state = new_user_information['address']['city_state']
 
+        address = models.classes.Address(public_place, neighborhood, city_state)
         new_user = models.classes.Person(name, birth_date, cpf, address)
+        
         models.data.person_data.register_person(new_user)
         
     def __format_response(self, new_user_information: Dict) -> Dict:

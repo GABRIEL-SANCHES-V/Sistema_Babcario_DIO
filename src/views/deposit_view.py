@@ -5,7 +5,7 @@ class DepositView:
     def deposit_screen(self) -> float:
         os.system('clear || cls')
 
-        print('Tela de Depositar:'.center(30))
+        print('Tela de Depositar:'.center(70, '-'))
 
         value = input('\nValor: R$ ')
         

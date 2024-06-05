@@ -14,5 +14,15 @@ def account_register_constructor():
     #Exibe a resposta na view
     if response['success']:
         account_register_view.register_account_success(response['message'])
+
+        #Criando senha
+        password = account_register_view.password_view()
+        response = account_register_controller.password(response['message']['attributes'], password)
+
+        if response['success']:
+            account_register_view.password_success(response['message'])
+        else:
+            account_register_view.password_fail(response['error'])
+
     else:
         account_register_view.register_account_fail(response['error'])    

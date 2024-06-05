@@ -15,18 +15,15 @@ class AccountFinderController:
         except Exception as error:
             return {'success': False, 'error': str(error)}
     
-    def __validate_fields(self, account_finder_information: Dict) -> None:  
-        if not isinstance(account_finder_information['name'], str):
-            raise Exception('Campo Nome Invalido!')
-        
+    def __validate_fields(self, account_finder_information: Dict) -> None:          
         try: int(account_finder_information['account_number'])
         except: raise Exception('Campo Numero da Conta Invalido!')
         
     def __find_account(self, account_finder_information: Dict) -> models.classes.Account:
-        name = account_finder_information['name']
         account_number = int(account_finder_information['account_number'])
+        password = account_finder_information['password']
 
-        account = models.data.account_data.find_account_by_account(name, account_number)
+        account = models.data.account_data.find_account_by_account_number(password, account_number)
 
         if account is None:
             raise Exception('Conta não encontrada!')
@@ -35,10 +32,7 @@ class AccountFinderController:
 
     def __format_response(self, account: models.classes.Account) -> Dict:
         return {
-            'name': account.person.name,
-            'age': account.person.age,
-            'account_number': account.number_account,
-            'balance': account.balance,
+            'message': 'Login realizado com sucesso!',
             'account': account
         }
         

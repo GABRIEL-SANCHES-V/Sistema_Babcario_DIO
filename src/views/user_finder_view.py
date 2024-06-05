@@ -5,7 +5,7 @@ class UserFinderView:
     def user_information(self):
         os.system('clear || cls')
 
-        print('Encontrar Usuário'.center(30, '-') + '\n')
+        print('Encontrar Usuário'.center(70, '-'))
 
         cpf = input('Digite o CPF: ')
 

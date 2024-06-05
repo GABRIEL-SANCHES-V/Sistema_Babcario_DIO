@@ -5,7 +5,7 @@ class UserRegisterView:
     def user_information(self) -> Dict:
         os.system('clear || cls')
 
-        print('Cadastrar Usuário'.center(30, '-'))
+        print('Cadastrar Usuário'.center(70, '-'))
 
         name = input('Nome: ')
         birth_date = input('Data de Nascimento (DD/MM/AAAA): ')

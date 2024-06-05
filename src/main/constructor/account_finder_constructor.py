@@ -16,6 +16,5 @@ def account_find_constructor():
         account_finder_view.find_account_success(response['message'])
         return response['message']['account']
         
-
     else:
         account_finder_view.find_account_error(response['error'])

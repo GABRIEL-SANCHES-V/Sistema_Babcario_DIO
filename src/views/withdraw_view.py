@@ -5,7 +5,7 @@ class WithdrawView():
     def withdraw_screen(self):
         os.system('clear || cls')
 
-        print('Tela de saque'.center(30))
+        print('Tela de saque'.center(70), '-')
         value = input('\nDigite o valor do saque: R$ ')
 
         return value
@@ -17,7 +17,8 @@ class WithdrawView():
 
         Valor do Saque: {response['value']}
 
-        Novo Saldo: R$ {response['attributes'].balance:.2f}'''
+        Novo Saldo: R$ {response['attributes'].balance:.2f}
+        '''
 
         print(sucess_message)
 

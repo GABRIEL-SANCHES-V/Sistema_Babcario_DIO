@@ -31,10 +31,37 @@ class AccountRegisterView:
         
         print(success_message)
 
+        input("Pressione Enter para continuar...")
+
     def register_account_fail(self, error: str) -> None:
         os.system("clear || cls")
         
         fail_message = f'''Erro ao criar conta:
+        
+            Erro: {error}
+        '''
+        print(fail_message)
+
+    def password_view(self):
+        os.system("clear || cls")
+        
+        print("Criar Senha:".center(70, '-') + '\n')
+        password = input("Dígite a senha para a conta corrente: ")
+
+        return password
+    
+    def password_success(self, message: str) -> None:
+        os.system("clear || cls")
+        
+        success_message = f'''{message}
+        '''
+        
+        print(success_message)
+
+    def password_fail(self, error: str) -> None:
+        os.system("clear || cls")
+        
+        fail_message = f'''Erro ao criar senha:
         
             Erro: {error}
         '''

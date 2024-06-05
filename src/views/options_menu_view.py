@@ -2,7 +2,7 @@
 class OptionsMenu():
 
     def home_menu():
-        print('Menu Principal:'.center(30, '-'))
+        print('Menu Principal:'.center(70, '-'))
         
         message = '''
         1 - Cadastrar Usuário
@@ -18,7 +18,9 @@ class OptionsMenu():
         return commands
     
     def account_menu():
-        message = '''\nMenu de Conta:
+        print('Menu da Conta Corrente:'.center(70, '-'))
+
+        message = '''
         1 - Ver Saldo
         2 - Depositar
         3 - Sacar
@@ -27,6 +29,6 @@ class OptionsMenu():
 
         print(message)
 
-        commands = input(f'Digite o número da opção desejada: ')
+        commands = input(f'\nDigite o número da opção desejada: ')
 
         return commands

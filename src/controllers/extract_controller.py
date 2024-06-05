@@ -11,10 +11,10 @@ class ExtractController:
             return {'Success': False, 'error': str(error)}
         
     def __extract(self, account_infortmation: models.classes.Account):
-        name = account_infortmation.person.name
+        password = account_infortmation.password
         account_number = int(account_infortmation.number_account)
 
-        account = models.data.account_data.find_account_by_account(name, account_number)
+        account = models.data.account_data.find_account_by_account_number(password, account_number)
 
         if account.extract == []:
             raise Exception('Conta não possui transações finaceiras!')
