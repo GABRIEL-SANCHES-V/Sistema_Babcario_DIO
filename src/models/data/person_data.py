@@ -1,18 +1,22 @@
 from src.models import classes
 
+# Classe para manipular os dados das pessoas
 class __PersonData:
     def __init__(self) -> None:
         self.person = []
 
+    # Registra uma nova pessoa no banco de dados
     def register_person(self, person: classes.Person) -> None:
         self.person.append(person)
 
+    # Encontra uma pessoa no banco de dados pelo CPF
     def find_person_by_cpf(self, cpf: str) -> classes.Person:
         for person in self.person:
             if person.cpf == cpf:
                 return person
         return None
     
+    # Valida se o CPF já está cadastrado no banco de dados
     def validate_cpf(self, cpf: str) -> bool:
         for person in self.person:
             if person.cpf == cpf:
@@ -20,8 +24,7 @@ class __PersonData:
         return True
     
 
-# Dados de Pessoas - Este é um exemplo de dados que poderiam ser carregados de um banco de dados seguindo o modelo sigletom
-
+# Banco dr Dados de Pessoas Improvisado - Este é um exemplo de dados que poderiam ser carregados de um banco de dados seguindo o modelo sigleton
 
 address_1 = classes.Address('Rua 1', 'Bairro 1', 'Cidade 1 - Estado 1')
 person_1 = classes.Person('João', '01/01/2000', '12345678901', address_1)

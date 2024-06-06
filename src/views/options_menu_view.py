@@ -1,6 +1,7 @@
 
 class OptionsMenu():
 
+    # Método para exibir o menu principal
     def home_menu():
         print('Menu Principal:'.center(70, '-'))
         
@@ -17,6 +18,7 @@ class OptionsMenu():
 
         return commands
     
+    # Método para exibir o menu da conta corrente
     def account_menu():
         print('Menu da Conta Corrente:'.center(70, '-'))
 

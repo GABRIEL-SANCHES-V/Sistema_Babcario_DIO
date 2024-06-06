@@ -1,13 +1,16 @@
 from src import models
 from .person_data import person_1, person_2, person_3
 
+#Classe para manipular os dados das contas
 class __AccountData:
     def __init__(self) -> None:
         self.accounts = []
 
+    #Registra uma nova conta no banco de dados
     def register_account(self, account: models.classes.Account) -> None:
         self.accounts.append(account)
 
+    #Encontra uma conta no banco de dados pelo número da conta e senha
     def find_account_by_account_number(self, password: str, account_number: int) -> models.classes.Account:
         for account in self.accounts:
             if int(account.number_account) == account_number:
@@ -17,6 +20,7 @@ class __AccountData:
                     raise Exception('Senha Incorreta!')
         return None
     
+    #Atualiza a conta no banco de dados
     def update_account(self, account: models.classes.Account) -> None:
         for account_data in self.accounts:
             if account_data.number_account == account.number_account:

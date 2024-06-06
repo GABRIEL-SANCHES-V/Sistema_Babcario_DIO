@@ -11,7 +11,7 @@ def account_register_constructor():
     #Envia as informações para o controller, que irá validar e criar a conta
     response = account_register_controller.register(new_account_information)
 
-    #Exibe a resposta na view
+    #Verifica se a conta foi criada com sucesso
     if response['success']:
         account_register_view.register_account_success(response['message'])
 
@@ -19,6 +19,7 @@ def account_register_constructor():
         password = account_register_view.password_view()
         response = account_register_controller.password(response['message']['attributes'], password)
 
+        #Verifica se a senha foi criada com sucesso
         if response['success']:
             account_register_view.password_success(response['message'])
         else:

@@ -2,6 +2,7 @@ import os
 from typing import Dict
 
 class UserFinderView:
+    # Coletando informações do usuário para encontrar no Banco de Dados
     def user_information(self):
         os.system('clear || cls')
 
@@ -11,6 +12,7 @@ class UserFinderView:
 
         return cpf
     
+    #Tela de sucesso ao encontrar o usuário
     def user_finder_success(self, message: Dict):
         os.system('clear || cls')
 
@@ -25,6 +27,7 @@ class UserFinderView:
         '''
         print(success_message)
 
+    #Tela de falha ao encontrar o usuário
     def user_finder_fail(self, error: str):
         os.system('clear || cls')
 

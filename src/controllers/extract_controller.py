@@ -10,6 +10,7 @@ class ExtractController:
         except Exception as error:
             return {'Success': False, 'error': str(error)}
         
+    #Extrai as informações da conta corrente no Banco de Dados
     def __extract(self, account_infortmation: models.classes.Account):
         password = account_infortmation.password
         account_number = int(account_infortmation.number_account)
@@ -21,6 +22,7 @@ class ExtractController:
         
         return account
         
+    #Formata o extrato para ser exibido na view
     def __format_extract(self, extract):
         response = ''
 
@@ -32,6 +34,7 @@ class ExtractController:
 
         return response
             
+    #Formata a resposta para ser exibida na view
     def __format_response(self, account: models.classes.Account):
         response = {
             'extract': self.__format_extract(account.extract),

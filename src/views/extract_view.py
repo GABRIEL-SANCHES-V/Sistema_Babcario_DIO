@@ -2,6 +2,7 @@ import os
 from typing import Dict
 
 class ExtractView:
+    #Tela para exibir o extrato bancário
     def extract_success(self, extract: Dict):
         os.system('clear || cls')
 
@@ -10,7 +11,8 @@ class ExtractView:
         print(f'{extract["extract"]}')
 
         print(f'Saldo Atual: R$ {extract["balance"]}\n')
-
+        
+    #Tela de erro ao puxar extrato
     def extract_fail(self, error: str):
         os.system('clear || cls')
 

@@ -2,7 +2,7 @@ import os
 from typing import Dict
 
 class AccountRegisterView:
-
+    #Tela para coletano o CPF para vincular a conta corrente com um conta de usuário
     def register_account_view(self):
         os.system("clear || cls")
 
@@ -11,6 +11,7 @@ class AccountRegisterView:
 
         return cpf
     
+    #Tela para exibir a mensagem de sucesso ao criar a conta corrente
     def register_account_success(self, message: Dict) -> None:
         os.system("clear || cls")
         
@@ -33,6 +34,7 @@ class AccountRegisterView:
 
         input("Pressione Enter para continuar...")
 
+    #Tela para exibir a mensagem de erro ao criar a conta corrente
     def register_account_fail(self, error: str) -> None:
         os.system("clear || cls")
         
@@ -42,6 +44,7 @@ class AccountRegisterView:
         '''
         print(fail_message)
 
+    #Tela para a criação da senha para a conta corrente
     def password_view(self):
         os.system("clear || cls")
         
@@ -50,6 +53,7 @@ class AccountRegisterView:
 
         return password
     
+    #Tela para exibir a mensagem de sucesso ao criar a senha
     def password_success(self, message: str) -> None:
         os.system("clear || cls")
         
@@ -58,6 +62,7 @@ class AccountRegisterView:
         
         print(success_message)
 
+    #Tela para exibir a mensagem de erro ao criar a senha
     def password_fail(self, error: str) -> None:
         os.system("clear || cls")
         

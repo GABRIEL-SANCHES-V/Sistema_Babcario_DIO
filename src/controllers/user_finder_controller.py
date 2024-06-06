@@ -11,13 +11,15 @@ class UserFinderController:
         except Exception as error:
             return {'success': False, 'error': str(error)}
 
+    #Valida o CPF, de acordo com o número de caracteres e se contém letras.
     def __validate_cpf(self, cpf: str):
         if not len(cpf) == 11:
             raise Exception('CPF inválido, número de digite inferior a 11')
         
         if not cpf.isdigit():
             raise Exception('CPF inválido, contém letras')
-        
+    
+    #Busca o usuário no banco de dados, que está no models, pelo CPF
     def __search_user(self, cpf: str) -> models.classes.Person:
         user = models.data.person_data.find_person_by_cpf(cpf)
 
@@ -25,7 +27,8 @@ class UserFinderController:
             raise Exception('Usuário não encontrado')
         
         return user
-        
+    
+    #Formata a resposta para ser exibida na view.
     def __format_response(self, user: models.classes.Person) -> Dict:
         return {
             'message': 'Usuário encontrado com sucesso!',

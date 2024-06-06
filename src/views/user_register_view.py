@@ -2,6 +2,7 @@ import os
 from typing import Dict
 
 class UserRegisterView:
+    # Coletando informações do usuário para cadastro
     def user_information(self) -> Dict:
         os.system('clear || cls')
 
@@ -33,6 +34,7 @@ class UserRegisterView:
 
         return new_user
     
+    #Tela de sucesso no cadastro do usuário
     def register_user_success(self, response: Dict) -> None:
         os.system('clear || cls')
 
@@ -48,6 +50,7 @@ class UserRegisterView:
 
         print(success_message)
 
+    #Tela de falha no cadastro do usuário
     def register_user_fail(self, error: str) -> None:
         os.system('clear || cls')
 

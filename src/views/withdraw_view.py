@@ -2,6 +2,7 @@ import os
 from typing import Dict
 
 class WithdrawView():
+    #Tela para saber o valor do saque na conta corrente
     def withdraw_screen(self):
         os.system('clear || cls')
 
@@ -10,6 +11,7 @@ class WithdrawView():
 
         return value
     
+    #Tela para exibir a mensagem de sucesso ao sacar na conta corrente
     def withdraw_sucess(self, response: Dict) -> None:
         os.system('clear || cls')
 
@@ -22,6 +24,7 @@ class WithdrawView():
 
         print(sucess_message)
 
+    #Tela para exibir a mensagem de erro ao sacar na conta corrente
     def withdraw_error(self, response: str) -> None:
         os.system('clear || cls')
 
